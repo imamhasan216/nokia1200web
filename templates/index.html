@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile Game Simulator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="phone">
+    <div class="bezel">
+      <div class="lcd">
+        <canvas id="screen"></canvas>
+        <div class="grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>const CFG = {{ cfg|tojson }};</script>
+  <script src="{{ url_for('static', filename='screen.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+SCREEN_W, SCREEN_H = 96, 68
+
+BG = "#c7f0d8"          # LCD light
+FG = "#43523d"          # LCD dark
+LETTER_SPACING = 1      # pixels between letters
+
+MAIN_MENU = "MAIN_MENU"
+GAME_SELECT = "GAME_SELECT"
+SNAKE = "SNAKE"
+RAPID_ROLL = "RAPID_ROLL"
+FOOTBALL = "FOOTBALL"
+GAME_OVER = "GAME_OVER"
+HIGH_SCORES = "HIGH_SCORES"

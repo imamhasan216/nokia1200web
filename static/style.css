@@ -1,0 +1,72 @@
+:root { --px: 7px; }                 /* set by JavaScript = one LCD pixel on screen */
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #14161a;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* phone body: upper half only */
+.phone {
+  position: relative;
+  margin-top: 20px;
+  min-height: calc(100vh - 20px);
+  padding: 84px 36px 40px;
+  background: linear-gradient(180deg, #4a515e 0%, #363c46 100%);
+  border: 3px solid #4e5662;
+  border-bottom: none;
+  border-radius: 56px 56px 0 0;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.08), 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+/* earpiece slot */
+.phone::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  width: 120px;
+  height: 12px;
+  margin-left: -60px;
+  border-radius: 6px;
+  background: #16181c;
+}
+
+/* dark frame around the LCD */
+.bezel {
+  background: #1a1c21;
+  border: 2px solid #2a2e35;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.lcd {
+  position: relative;
+  background: #0c0e10;
+  line-height: 0;
+}
+
+#screen {
+  display: block;
+  image-rendering: pixelated;        /* keep pixels sharp */
+}
+
+/* faint lines between LCD pixels */
+.grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.11) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.11) 1px, transparent 1px);
+  background-size: var(--px) var(--px);
+}
